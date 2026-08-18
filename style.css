@@ -8,13 +8,13 @@
 }
 
 .sensoren {
+    box-sizing: border-box;
+    width: 100%;
+    
     background-color: #1e293b;
     color: white;
 
-    width: 200px;
     padding: 20px;
-    margin-bottom: 20px;
-
     border-radius: 20px;
 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
