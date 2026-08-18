@@ -1,9 +1,13 @@
-/* Grundlegende Einstellungen */
+/* =========================
+   GRUNDEINSTELLUNGEN
+========================= */
+
 * {
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -11,11 +15,13 @@ html, body {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    color: black;
 }
 
 
-/* Hauptbereich */
+/* =========================
+   HAUPTBEREICH
+========================= */
+
 .body {
     background-color: #a9c3c4c5;
     min-height: 100vh;
@@ -24,28 +30,36 @@ body {
 }
 
 
-/* Sensoren-Anordnung */
+/* =========================
+   SENSOR-KARTEN
+========================= */
+
 .abstand {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+
+    /* PC: 4 Karten nebeneinander */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
     gap: 20px;
     width: 100%;
 }
 
 
-/* Sensor-Karten */
 .sensoren {
     background-color: #1e293b;
     color: white;
 
     width: 100%;
+    min-width: 0;
     min-height: 180px;
+
     padding: 20px;
 
     border-radius: 20px;
 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 
+    font-family: Arial, sans-serif;
     font-size: 18px;
     text-align: center;
     font-weight: bold;
@@ -57,37 +71,39 @@ body {
 }
 
 
-/* Icons */
 .icons {
     font-size: 50px;
     margin-bottom: 5px;
 }
 
 
-/* TABLET */
-@media (max-width: 1000px) {
+/* =========================
+   TABLET
+========================= */
+
+@media screen and (max-width: 1000px) {
 
     .abstand {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-
-    .sensoren {
-        min-height: 160px;
+        /* Tablet: 2 Karten */
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
 }
 
 
-/* HANDY */
-@media (max-width: 600px) {
+/* =========================
+   HANDY
+========================= */
+
+@media screen and (max-width: 600px) {
 
     .body {
         padding: 10px;
     }
 
     .abstand {
-        grid-template-columns: repeat(2, 1fr);
+        /* Handy: 2 Karten pro Reihe */
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
     }
 
@@ -100,7 +116,6 @@ body {
 
     .icons {
         font-size: 35px;
-        margin-bottom: 3px;
     }
 
     h1 {
@@ -109,10 +124,6 @@ body {
 
     h3 {
         font-size: 16px;
-    }
-
-    p {
-        font-size: 14px;
     }
 
 }
