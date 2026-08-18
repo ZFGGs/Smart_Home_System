@@ -1,25 +1,51 @@
-.body{
-    background-color: #a9c3c4c5;
-    min-height: 100vh;
-    margin: 0;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1;
+/* Grundlegende Einstellungen */
+* {
+    box-sizing: border-box;
 }
 
-.sensoren {
-    box-sizing: border-box;
+html, body {
+    margin: 0;
+    padding: 0;
     width: 100%;
-    
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+
+/* Hauptbereich */
+.body {
+    background-color: #a9c3c4c5;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+}
+
+
+/* Sensoren-Anordnung */
+.abstand {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+
+/* Sensor-Karten */
+.sensoren {
     background-color: #1e293b;
     color: white;
 
+    width: 100%;
+    min-height: 180px;
     padding: 20px;
+
     border-radius: 20px;
 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 
-    font-family: Arial, sans-serif;
     font-size: 18px;
     text-align: center;
     font-weight: bold;
@@ -30,13 +56,63 @@
     align-items: center;
 }
 
+
+/* Icons */
 .icons {
-    font-size: xxx-large;
+    font-size: 50px;
     margin-bottom: 5px;
 }
 
-.abstand {
-    display: flex;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+/* TABLET */
+@media (max-width: 1000px) {
+
+    .abstand {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .sensoren {
+        min-height: 160px;
+    }
+
+}
+
+
+/* HANDY */
+@media (max-width: 600px) {
+
+    .body {
+        padding: 10px;
+    }
+
+    .abstand {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .sensoren {
+        min-height: 130px;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 15px;
+    }
+
+    .icons {
+        font-size: 35px;
+        margin-bottom: 3px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
 }
